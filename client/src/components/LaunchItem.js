@@ -1,21 +1,26 @@
-import React from 'react';
-import classNames from 'classnames';
-import Moment from 'react-moment';
-import { Link } from 'react-router-dom';
+import React from "react";
+import classNames from "classnames";
+import Moment from "react-moment";
+import { Link } from "react-router-dom";
+
+const Edward = {
+  color: "#000",
+  backgroundColor: "#abb7b7",
+};
 
 export default function LaunchItem({
-  launch: { flight_number, mission_name, launch_date_local, launch_success }
+  launch: { flight_number, mission_name, launch_date_local, launch_success },
 }) {
   return (
-    <div className="card card-body mb-3">
+    <div className="card card-body mb-3" style={Edward}>
       <div className="row">
         <div className="col-md-9">
           <h4>
-            Mission:{' '}
+            Mission:{" "}
             <span
               className={classNames({
-                'text-success': launch_success,
-                'text-danger': !launch_success
+                "text-success": launch_success,
+                "text-danger": !launch_success,
               })}
             >
               {mission_name}
